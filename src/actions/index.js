@@ -37,7 +37,7 @@ return {
 
 export function deletePost(id, callback){
     axios.delete(`${ROOT_URL}/posts/${id}${API_KEY}`)
-        .then(()=> {callback()});
+        .then(()=> callback());
 
     return {
         type: DELETE_POST,

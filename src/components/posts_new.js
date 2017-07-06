@@ -46,7 +46,7 @@ return (
     //onSubmit is bound to 'this' at the component level
     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
     <Field label="Title:" name="title" component={this.renderField}/>
-  {/*  <Field label="Categories:" name="categories" component={this.renderField}/>*/}
+    <Field label="Categories:" name="categories" component={this.renderField}/>
     <Field label="Content:" name="content" component={this.renderField}/>
     <button type="submit" className="btn btn-primary">Submit</button>
   <Link to="/" className="btn btn-danger">Cancel</Link>

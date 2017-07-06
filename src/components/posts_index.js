@@ -31,7 +31,7 @@ render () {
 //console.log(this.props.posts);
 return (
       <div>
-          <h2>Mdevelopment's ReactJS BLOG</h2>
+          <h2>BLOG POST</h2>
           <div className="text-xs-right">
             <Link className="btn btn-primary" to="/posts/new">
             Add a Post
