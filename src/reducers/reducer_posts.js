@@ -27,9 +27,14 @@ case FETCH_POSTS:
     return _.mapKeys (action.payload.data, 'id');
 
     case DELETE_POST:
-    //_.omit is a lodash function that reaches for the current post id and deletes it
+    //_.omit is a lodash function that reaches for the current post id on an object and deletes it
     //it deletes the current state and returns a new state witout the targeted Post for deletion
            return _.omit(state, action.payload);
+
+    //Syntax for deleting from an array is BELOW
+    //return _.reject(state, post => post.id === action.payload)
+
+
 default:
     return state;
  }
