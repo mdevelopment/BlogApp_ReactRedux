@@ -42,7 +42,8 @@ class PostsShow extends Component {
               <Link to="/" className="btn btn-primary" pull-sm-left>Home</Link>
             */}
             <div className="jumbotron">
-            <h1>Hello, world!</h1>
+            <h1>Mdevelopment / ReactJS Blog Posts</h1>
+            <p>What's this?</p>
             </div>
             <div className="contentNav">
              <button className="btn btn-primary pull-sm-left" onClick={this.navigateToHomePage.bind(this)}>Home</button>

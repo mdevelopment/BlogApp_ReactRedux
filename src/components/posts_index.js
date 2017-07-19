@@ -36,7 +36,11 @@ render () {
 return (
       <div>
       <div className="jumbotron">
-      <h1>Hello, world!</h1>
+      <h1>Mdevelopment / ReactJS Blog</h1>
+      <p>Simple ReactJS with Redux blog app developed through a student training at https://www.udemy.com
+       with Stephen Grider.  The purpose of the blog is to focus and gather information concerning ReactJS
+       as part of my continuing studies.
+       </p>
       </div>
           <div className="text-xs-right">
             <Link className="btn btn-primary addPost"  to="/posts/new">
