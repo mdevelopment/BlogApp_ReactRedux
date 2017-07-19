@@ -60,7 +60,7 @@ return (
     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
     <Field label="Title:" name="title" type="input" component={this.renderField}/>
     <Field label="Categories:" name="categories" type="input" component={this.renderField}/>
-  <Field label="Content:"  name="content" type="textarea" component={this.renderField}/>
+    <Field label="Content:"  name="content" type="textarea" component={this.renderField}/>
     <button type="submit" className="btn btn-primary">Submit</button>
     <Link to="/" className="btn btn-danger">Cancel</Link>
     </form>
