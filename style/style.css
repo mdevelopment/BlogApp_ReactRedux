@@ -1,9 +1,7 @@
 /* LINK TAGS are anchor tags show up as such in CSS and HTML as */
 form a {
 
-
 margin-left: 10px;
-
 
 }
 * {
@@ -15,4 +13,11 @@ margin-left: 10px;
 
   margin:15px;
 
+}
+
+
+
+textarea {
+  height: 10em;
+     width: 50em;
 }

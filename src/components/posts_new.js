@@ -9,19 +9,24 @@ import {createPost} from '../actions';
 class PostsNew extends Component {
 
 
+
   renderField(field) {
+
+
 
   //NOTE to refractured vars below. the first allows one to drop make a shorter
   //reference to the objects touched and error.  as opposed to writing
   // field.meta.touched or field.meta.error //
     const {meta: {touched, error}} = field;
+
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
-    console.log(field.label);
-    if(field.label =='Title:' || field.label =='Categories:' ) {
+
+
+    //console.log(field.label);
   return(
     <div className={className}>
       <label>{field.label}</label>
-        <input className='form-control'
+        <field.type className='form-control'
           type="text"
           {...field.input}
         />
@@ -33,29 +38,7 @@ class PostsNew extends Component {
         </div>
     </div>
   )
-} else {
-  return(
-    <div className={className}>
-      <label>{field.label}</label>
-        <textarea className='form-control'
-          type="text"
-          {...field.input}
-        />
-        {/*
-        //BOOTSTRAP class below text-help is what is styling the error messages as red//
-        */}
-        <div className="text-danger">
-        {touched ? error: ''}
-        </div>
-    </div>
-  )
-
-
-
 }
-}
-
-
 
 
 onSubmit(values) {
@@ -67,6 +50,8 @@ onSubmit(values) {
     });
 }
 
+
+
 render () {
   //NOTE handleSubmit is a specific function of the reduxForm class
   const {handleSubmit} = this.props;
@@ -75,7 +60,7 @@ return (
     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
     <Field label="Title:" name="title" type="input" component={this.renderField}/>
     <Field label="Categories:" name="categories" type="input" component={this.renderField}/>
-    <Field label="Content:" name="content" type="textarea" component={this.renderField}/>
+  <Field label="Content:"  name="content" type="textarea" component={this.renderField}/>
     <button type="submit" className="btn btn-primary">Submit</button>
     <Link to="/" className="btn btn-danger">Cancel</Link>
     </form>
@@ -101,7 +86,6 @@ return errors;
 
 export default reduxForm({
   validate,
-
   form:'PostsNewForm'
   })(
   connect(null, {createPost}) (PostsNew)
