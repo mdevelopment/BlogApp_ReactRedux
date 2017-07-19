@@ -19,13 +19,12 @@ margin:auto;
 
 }
 .jumbotron {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-    background-color: #eceeef;
-    border-radius: .3rem;
-    
-    margin-top:0px;
-    background-color: red;
+
+  background-color: "#71eff9";
+  border-radius: 0rem;
+  margin-top: 1em;;
+  margin-bottom:1em;
+
 }
 
 .btn {
@@ -72,10 +71,13 @@ margin-top:40px;
 }
 .contentHeader {
 
-
-
 }
-
 .addPost {
+  margin-top:0px;
 marginleft:'-15px'
+};
+
+.buttonRowPosts  {
+  display:block;
+margin-top:300px;
 };
