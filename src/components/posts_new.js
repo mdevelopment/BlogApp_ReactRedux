@@ -3,33 +3,60 @@ import {Field, reduxForm} from 'redux-form';
 import {Link} from 'react-router-dom';
 import  {connect } from 'react-redux';
 import {createPost} from '../actions';
-import TheTitle from "./mytitle";
 
 
 
 class PostsNew extends Component {
+
+
   renderField(field) {
+
   //NOTE to refractured vars below. the first allows one to drop make a shorter
   //reference to the objects touched and error.  as opposed to writing
   // field.meta.touched or field.meta.error //
     const {meta: {touched, error}} = field;
     const className = `form-group ${touched && error ? 'has-danger' : ''}`;
+    console.log(field.label);
+    if(field.label =='Title:' || field.label =='Categories:' ) {
   return(
     <div className={className}>
-    <label>{field.label}</label>
-    <input className='form-control'
-      type="text"
-      {...field.input}
-    />
-    {/*{field.meta.error}
-    //BOOTSTRAP class below text-help is what is styling the error messages as red//
-    */}
-    <div className="text-danger">
-    {field.meta.touched ? field.meta.error: ''}
-    </div>
+      <label>{field.label}</label>
+        <input className='form-control'
+          type="text"
+          {...field.input}
+        />
+        {/*
+        //BOOTSTRAP class below text-help is what is styling the error messages as red//
+        */}
+        <div className="text-danger">
+        {touched ? error: ''}
+        </div>
     </div>
   )
+} else {
+  return(
+    <div className={className}>
+      <label>{field.label}</label>
+        <textarea className='form-control'
+          type="text"
+          {...field.input}
+        />
+        {/*
+        //BOOTSTRAP class below text-help is what is styling the error messages as red//
+        */}
+        <div className="text-danger">
+        {touched ? error: ''}
+        </div>
+    </div>
+  )
+
+
+
 }
+}
+
+
+
 
 onSubmit(values) {
     //this === component === PostsNew
@@ -45,15 +72,13 @@ render () {
   const {handleSubmit} = this.props;
 return (
     //onSubmit is bound to 'this' at the component level
-    <div><TheTitle pagetitle="Mdevelopment ReactJS Notes Blog"/>
     <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
-    <Field label="Title:" name="title" component={this.renderField}/>
-    <Field label="Categories:" name="categories" component={this.renderField}/>
-    <Field label="Content:" name="content" component={this.renderField}/>
+    <Field label="Title:" name="title" type="input" component={this.renderField}/>
+    <Field label="Categories:" name="categories" type="input" component={this.renderField}/>
+    <Field label="Content:" name="content" type="textarea" component={this.renderField}/>
     <button type="submit" className="btn btn-primary">Submit</button>
-  <Link to="/" className="btn btn-danger">Cancel</Link>
+    <Link to="/" className="btn btn-danger">Cancel</Link>
     </form>
-    </div>
      )
    };
 }
@@ -76,6 +101,7 @@ return errors;
 
 export default reduxForm({
   validate,
+
   form:'PostsNewForm'
   })(
   connect(null, {createPost}) (PostsNew)
