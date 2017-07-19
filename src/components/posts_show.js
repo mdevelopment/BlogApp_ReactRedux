@@ -41,7 +41,9 @@ class PostsShow extends Component {
             {/* <Link to="/"> Back To Index</Link>
               <Link to="/" className="btn btn-primary" pull-sm-left>Home</Link>
             */}
-            <div className="row contentHeader"></div>
+            <div className="jumbotron">
+            <h1>Hello, world!</h1>
+            </div>
             <div className="contentNav">
              <button className="btn btn-primary pull-sm-left" onClick={this.navigateToHomePage.bind(this)}>Home</button>
              <button className="btn btn-danger pull-sm-right" onClick={this.onDeleteClick.bind(this)}>Delete Post</button>
