@@ -23,9 +23,10 @@ switch(action.type) {
 
 case FETCH_POSTS:
     //console.log(action.paload.data) // [post1, post2, ect] But must be converted to an object as {id: postobj}
-    return _.mapKeys (action.payload.data, 'id');
+     //const myPayload =   action.payload.data;
+     return _.mapKeys (action.payload.data, 'id');
 
-    case DELETE_POST:
+     case DELETE_POST:
            return _.omit(state, action.payload);
 default:
     return state;

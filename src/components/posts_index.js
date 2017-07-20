@@ -25,10 +25,9 @@ return _.map(this.props.posts, post=> {
           {post.title}
           </Link>
           </li>
-
          </div>
         )
-});
+  });
 
 }
 
