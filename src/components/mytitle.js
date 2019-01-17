@@ -13,7 +13,7 @@ render () {
   };
 
   return (
-    <h2 style={divStyle} className="myheader">{title}</h2>
+    //<h2 style={divStyle} className="myheader">{title}</h2>
         );
   };
 }
